@@ -6,10 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Superman{% endblock title %}</title>
     <link rel="stylesheet" href="{%static  'dc/css/bootstrap.min.css' %}">
+    <style>
+         table, th, td {
+        border: 2px solid black;
+      }
+    </style>
+   
+    
 </head>
 <body>
     <h1>{% block content %} i am superman {% endblock content %}</h1>
-    <h2> villan is {{villan}}</h2>
+   <table>
+    <th>Name</th>
+    <th>heroicname</th>
+    {% for i in con %}
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.heroicname}}</td>
+    </tr>
+    {% endfor %}
+   </table>
+    
     <script src="{%static 'dc/js/bootstrap.min.js' %}"></script>
     <script src="{%static 'dc/js/jquery.js' %}"></script>
     <script src="{%static 'dc/js/popper.js' %}"></script>
